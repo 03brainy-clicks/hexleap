@@ -4,9 +4,13 @@ import TicketCard from "./cards/TicketCard";
 import Ticket1 from "./../public/ticket-1.png";
 import Ticket2 from "./../public/ticket-2.png";
 import Slider from "react-slick";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
-const PrevBtn = ({ onClick }) => (
+type BtnProps = {
+    onClick:(()=>{})
+}
+
+const PrevBtn = ({ onClick }:BtnProps) => (
   <button
     className="absolute top-1/2 -left-12 md:-left-20 transform  py-2 -translate-y-1/2 bg-transparent border border-[#2c9cf0] shadow-md z-10"
     onClick={onClick}
@@ -15,7 +19,7 @@ const PrevBtn = ({ onClick }) => (
   </button>
 );
 
-const NextBtn = ({ onClick }) => (
+const NextBtn = ({ onClick }:BtnProps) => (
   <button
     className="absolute top-1/2 -right-12 md:-right-20 transform -translate-y-1/2 border border-[#2c9cf0] shadow-md z-10 py-2"
     onClick={onClick}
