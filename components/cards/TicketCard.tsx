@@ -14,6 +14,7 @@ const TicketCard = ({
   button,
   state,
 }: TicketCardProps) => {
+    
   return (
     <div className=" bg-white dark:bg-[#3B3E47] shadow-2 group mx-4">
       <div className="p-3 ">

@@ -19,7 +19,7 @@
 }
 
 .animate {
-  @apply transition-all duration-500;
+  @apply transition-all duration-1000;
 }
 .slick-style > div {
   margin: 0px 5px !important;

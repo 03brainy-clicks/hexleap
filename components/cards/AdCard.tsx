@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 
 interface SportCardProps {
@@ -8,7 +9,12 @@ interface SportCardProps {
 
 const AdCard = ({ image, title, content }: SportCardProps) => {
   return (
-    <div className="p-3 bg-white shadow-1 space-y-3 dark:text-[white] dark:bg-[#3B3E47]">
+    <motion.div
+      initial={{ x: 100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1, delay: 0.8 }}
+      className="p-3 bg-white shadow-1 space-y-3 dark:text-[white] dark:bg-[#3B3E47]"
+    >
       <div className="border border-[#006555] h-full flex flex-col">
         <div className="relative">
           <Image src={image} className="w-full" alt="ad" />
@@ -25,7 +31,7 @@ const AdCard = ({ image, title, content }: SportCardProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
