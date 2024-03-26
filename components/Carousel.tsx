@@ -12,7 +12,7 @@ type BtnProps = {
 
 const PrevBtn = ({ onClick }: BtnProps) => (
   <button
-    className="absolute top-1/2 -left-12 md:-left-20 transform  py-2 -translate-y-1/2 bg-transparent border border-[#2c9cf0] shadow-md z-10"
+    className="absolute top-1/2 -left-12 md:-left-24  lg:-left-28 transform  py-2 -translate-y-1/2 bg-transparent border border-[#2c9cf0] shadow-md z-10"
     onClick={onClick}
   >
     <ChevronLeftIcon className="w-8   text-[#2c9cf0]" />
@@ -21,7 +21,7 @@ const PrevBtn = ({ onClick }: BtnProps) => (
 
 const NextBtn = ({ onClick }: BtnProps) => (
   <button
-    className="absolute top-1/2 -right-12 md:-right-20 transform -translate-y-1/2 border border-[#2c9cf0] shadow-md z-10 py-2"
+    className="absolute top-1/2 -right-12 md:-right-24 lg:-right-28 transform -translate-y-1/2 border border-[#2c9cf0] shadow-md z-10 py-2"
     onClick={onClick}
   >
     <ChevronRightIcon className="w-8 text-[#2c9cf0]" />
@@ -33,26 +33,23 @@ const Carousel = () => {
     {
       image: Ticket1,
       title: "Las Vegas Aviators",
-      address: "Las Vegas Ballpark, Las Vegas, Nevada",
+      address: "Las Vegas Ballpark, Las Vegas,",
       button: "Take Flight Collection",
+      state: "Nevada",
     },
     {
       image: Ticket2,
       title: "Sacramento River Cats",
-      address: "Sutter Health Park, Sacramento, California",
+      address: "Sutter Health Park, Sacramento,",
+      state: "California",
       button: "Orange Collection",
     },
     {
       image: Ticket1,
       title: "Las Vegas Aviators",
-      address: "Las Vegas Ballpark, Las Vegas, Nevada",
+      address: "Las Vegas Ballpark, Las Vegas,",
       button: "Take Flight Collection",
-    },
-    {
-      image: Ticket2,
-      title: "Sacramento River Cats",
-      address: "Sutter Health Park, Sacramento, California",
-      button: "Orange Collection",
+      state: "Nevada",
     },
   ];
 
@@ -79,24 +76,25 @@ const Carousel = () => {
     ),
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1440,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           infinite: true,
           dots: false,
         },
       },
       {
-        breakpoint: 850,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 1,
+          dots: false,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -111,6 +109,7 @@ const Carousel = () => {
         {ticketList.map((ticket, index) => (
           <TicketCard
             key={index}
+            state={ticket.state}
             image={ticket.image}
             title={ticket.title}
             address={ticket.address}

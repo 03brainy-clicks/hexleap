@@ -9,8 +9,9 @@
 }
 
 .shadow-1 {
-  box-shadow: 0px 4px 8px #0000000D;
-}.shadow-2 {
+  box-shadow: 0px 4px 8px #0000000d;
+}
+.shadow-2 {
   box-shadow: 0px 8px 16px #0000001a;
 }
 .shadow-3 {
@@ -18,7 +19,7 @@
 }
 
 .animate {
-  @apply transition-all duration-300;
+  @apply transition-all duration-500;
 }
 .slick-style > div {
   margin: 0px 5px !important;

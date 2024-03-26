@@ -5,6 +5,7 @@ import Player2 from "../../public/player-2.png";
 import Player3 from "../../public/player-3.png";
 import Ad from "../../public/ad.png";
 import AdCard from "../cards/AdCard";
+import ThemeToggler from "../ThemeToggler";
 
 const SportSection = () => {
   const playerList = [
@@ -34,13 +35,14 @@ const SportSection = () => {
     },
   ];
   return (
-    <div className="space-y-7">
-      <div>
-        <span className="text-2xl font-bold border-b-2 border-[#738FFF] pb-1 poppins  dark:text-white">
+    <div className="space-y-7 px-5 sm:p-0">
+      <div className="flex justify-between items-center">
+        <div className="text-2xl font-bold border-b-2 border-[#738FFF] pb-1 poppins  dark:text-white">
           Sports
-        </span>
+        </div>
+        <ThemeToggler />
       </div>
-      <div className="grid lg:grid-cols-5  md:grid-cols-2   grid-cols-1 gap-3">
+      <div className="grid xl:grid-cols-5 lg:grid-cols-3 sm:grid-cols-2  grid-cols-1 gap-3">
         {playerList.map((player, i) => {
           return (
             <SportsCard
@@ -59,7 +61,7 @@ const SportSection = () => {
         />
       </div>
       <div className="text-center pt-5">
-        <button className="text-sm text-white font-semibold bg-[#2C9CF0] py-[10px] px-[30px] rounded-sm ">
+        <button className="text-sm text-white font-semibold bg-[#2C9CF0] hover:bg-[#2c9bf0de] py-[10px] px-[30px] rounded-sm animate">
           See More
         </button>
       </div>
