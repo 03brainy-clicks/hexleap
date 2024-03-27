@@ -18,7 +18,7 @@ const AdCard = ({ image, title, content, delay }: AdCardProps) => {
       <div className="border border-[#006555] h-full flex flex-col">
         <div className="relative">
           <Image src={image} className="w-full" alt="ad" />
-          <span className="absolute text-sm z-1 top-0 right-0 text-white bg-black py-1 px-3">
+          <span className="absolute text-sm top-0 right-0 text-white bg-black py-1 px-3">
             Ad
           </span>
         </div>

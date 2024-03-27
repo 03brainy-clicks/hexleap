@@ -105,7 +105,7 @@ const Carousel = () => {
 
   return (
     <RevealAnimation
-      delay={0}
+      delay={0.2}
       classes="relative w-8/12 slider-container mx-auto gap-7"
     >
       <Slider {...settings}>

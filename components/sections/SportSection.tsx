@@ -65,7 +65,7 @@ const SportSection = () => {
           delay={0.4}
         />
       </div>
-      <RevealAnimation delay={.6} classes="text-center">
+      <RevealAnimation delay={.5} classes="text-center">
         <button className="text-sm text-white font-semibold bg-[#2C9CF0] hover:bg-[#2c7dbc] py-[10px] px-[30px] rounded-sm animate">
           See More
         </button>
