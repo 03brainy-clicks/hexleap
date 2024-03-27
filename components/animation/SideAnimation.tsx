@@ -14,7 +14,7 @@ const animationVariant = {
     opacity: 1,
     transition: {
       delay: delay,
-      duration: .5,
+      duration: .7,
     },
   }),
 };
