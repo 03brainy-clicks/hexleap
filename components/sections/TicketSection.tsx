@@ -13,7 +13,7 @@ const TicketSection = () => {
     <div className="space-y-12 pt-14 pb-12 bg-gradient-to-b from-[#F9F8FF] to-[#F3F9FF] dark:bg-gradient-to-b dark:from-[#18282A] dark:to-[#221A2C] dark:text-white">
       <div className="sm:w-11/12 lg:w-9/12 md:w-10/12 w-full px-5 mx-auto text-center ">
         <RevealAnimation
-          delay={0}
+          delay={.8}
           classes="text-[3.125rem] font-bold poppins leading-tight mb-5 "
         >
           Collection Spotlight
