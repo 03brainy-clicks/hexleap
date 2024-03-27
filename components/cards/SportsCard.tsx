@@ -30,7 +30,7 @@ const SportsCard = ({ image, title, event, sport, delay }: SportCardProps) => {
         once: true,
       }}
       custom={delay}
-      className="p-3 bg-white dark:bg-[#3B3E47] flex flex-col space-y-3  shadow-1 dark:text-white group"
+      className="p-3 bg-white dark:bg-[#3B3E47] flex flex-col gap-3  shadow-1 dark:text-white group"
     >
       <div className="w-full overflow-hidden">
         <Image

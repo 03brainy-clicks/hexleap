@@ -7,12 +7,27 @@ interface SportCardProps {
   content: string;
 }
 
+const animationVariant = {
+  initial: { x: 100, opacity: 0 },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.8,
+      duration: 1,
+    },
+  },
+};
+
 const AdCard = ({ image, title, content }: SportCardProps) => {
   return (
     <motion.div
-      initial={{ x: 100, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 1, delay: 0.8 }}
+    variants={animationVariant}
+      initial="initial"
+      whileInView={"animate"}
+      viewport={{
+        once: true,
+      }}
       className="p-3 bg-white shadow-1 space-y-3 dark:text-[white] dark:bg-[#3B3E47]"
     >
       <div className="border border-[#006555] h-full flex flex-col">

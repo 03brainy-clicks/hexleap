@@ -7,7 +7,7 @@ import Player3 from "../../public/player-3.png";
 import Ad from "../../public/ad.png";
 import AdCard from "../cards/AdCard";
 import ThemeToggler from "../ThemeToggler";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const animationVariant = {
   initial: { y: 50, opacity: 0 },

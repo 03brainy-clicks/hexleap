@@ -4,7 +4,7 @@ import Carousel from "../Carousel";
 
 const animationVariant = {
   initial: { y: 50, opacity: 0 },
-  animate: { y: 0, opacity: 1, transition: { duration: 1} },
+  animate: { y: 0, opacity: 1, transition: { duration: 1, delay:.8} },
 };
 
 const TicketSection = () => {
