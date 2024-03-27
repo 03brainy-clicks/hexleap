@@ -1,34 +1,19 @@
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
+import SideAnimation from "../animation/SideAnimation";
 
-interface SportCardProps {
+interface AdCardProps {
   image: StaticImageData;
   title: string;
   content: string;
+  delay: number;
 }
 
-const animationVariant = {
-  initial: { x: 100, opacity: 0 },
-  animate: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      delay: 0.8,
-      duration: 1,
-    },
-  },
-};
-
-const AdCard = ({ image, title, content }: SportCardProps) => {
+const AdCard = ({ image, title, content, delay }: AdCardProps) => {
   return (
-    <motion.div
-    variants={animationVariant}
-      initial="initial"
-      whileInView={"animate"}
-      viewport={{
-        once: true,
-      }}
-      className="p-3 bg-white shadow-1 space-y-3 dark:text-[white] dark:bg-[#3B3E47]"
+    <SideAnimation
+      delay={delay}
+      classes="p-3 bg-white shadow-1 space-y-3 dark:text-[white] dark:bg-[#3B3E47]"
     >
       <div className="border border-[#006555] h-full flex flex-col">
         <div className="relative">
@@ -46,7 +31,7 @@ const AdCard = ({ image, title, content }: SportCardProps) => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </SideAnimation>
   );
 };
 

@@ -1,5 +1,6 @@
-import { delay, motion } from "framer-motion";
+"use client";
 import Image, { StaticImageData } from "next/image";
+import SideAnimation from "../animation/SideAnimation";
 
 interface SportCardProps {
   image: StaticImageData;
@@ -8,29 +9,12 @@ interface SportCardProps {
   sport: string;
   delay: number;
 }
-const animationVariant = {
-  initial: { x: 100, opacity: 0 },
-  animate: (delay: number) => ({
-    x: 0,
-    opacity: 1,
-    transition: {
-      delay: 0.2 * delay,
-      duration: 1,
-    },
-  }),
-};
 
 const SportsCard = ({ image, title, event, sport, delay }: SportCardProps) => {
   return (
-    <motion.div
-      variants={animationVariant}
-      initial="initial"
-      whileInView={"animate"}
-      viewport={{
-        once: true,
-      }}
-      custom={delay}
-      className="p-3 bg-white dark:bg-[#3B3E47] flex flex-col gap-3  shadow-1 dark:text-white group"
+    <SideAnimation
+      delay={delay}
+      classes="p-3 bg-white dark:bg-[#3B3E47] flex flex-col gap-3  shadow-1 dark:text-white group"
     >
       <div className="w-full overflow-hidden">
         <Image
@@ -56,7 +40,7 @@ const SportsCard = ({ image, title, event, sport, delay }: SportCardProps) => {
           <span className="text-sm font-medium">{sport}</span>
         </div>
       </div>
-    </motion.div>
+    </SideAnimation>
   );
 };
 

@@ -1,10 +1,10 @@
 import React from "react";
-import TicketCard from "./cards/TicketCard";
-import Ticket1 from "./../public/ticket-1.png";
-import Ticket2 from "./../public/ticket-2.png";
+import TicketCard from "../cards/TicketCard";
+import Ticket1 from "../../public/ticket-1.png";
+import Ticket2 from "../../public/ticket-2.png";
 import Slider from "react-slick";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
-import { motion } from "framer-motion";
+import RevealAnimation from "../animation/RevealAnimation";
 
 type BtnProps = {
   onClick: () => void;
@@ -27,11 +27,6 @@ const NextBtn = ({ onClick }: BtnProps) => (
     <ChevronRightIcon className="w-8 text-[#2c9cf0]" />
   </button>
 );
-
-const animationVariant = {
-  initial: { y: 50, opacity: 0 },
-  animate: { y: 0, opacity: 1, transition: { duration: 1, delay: 1 } },
-};
 
 const Carousel = () => {
   const ticketList = [
@@ -109,14 +104,9 @@ const Carousel = () => {
   };
 
   return (
-    <motion.div
-      variants={animationVariant}
-      initial="initial"
-      whileInView={"animate"}
-      viewport={{
-        once: true,
-      }}
-      className="relative w-8/12 slider-container mx-auto gap-7"
+    <RevealAnimation
+      delay={0}
+      classes="relative w-8/12 slider-container mx-auto gap-7"
     >
       <Slider {...settings}>
         {ticketList.map((ticket, index) => (
@@ -130,7 +120,7 @@ const Carousel = () => {
           />
         ))}
       </Slider>
-    </motion.div>
+    </RevealAnimation>
   );
 };
 

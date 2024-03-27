@@ -6,31 +6,8 @@ import Player2 from "../../public/player-2.png";
 import Player3 from "../../public/player-3.png";
 import Ad from "../../public/ad.png";
 import AdCard from "../cards/AdCard";
-import ThemeToggler from "../ThemeToggler";
-import { motion } from "framer-motion";
-
-const animationVariant = {
-  initial: { y: 50, opacity: 0 },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 1,
-    },
-  },
-};
-
-const animationVariant_2 = {
-  initial: { y: 50, opacity: 0 },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 1,
-      delay: 1,
-    },
-  },
-};
+import ThemeToggler from "../utils/ThemeToggler";
+import RevealAnimation from "../animation/RevealAnimation";
 
 const SportSection = () => {
   const playerList = [
@@ -62,17 +39,12 @@ const SportSection = () => {
 
   return (
     <div className="space-y-7 px-5 sm:p-0">
-      <motion.div
-        variants={animationVariant}
-        initial="initial"
-        animate="animate"
-        className="flex justify-between items-center"
-      >
+      <RevealAnimation classes="flex items-center justify-between" delay={0}>
         <div className="text-2xl font-bold border-b-2 border-[#738FFF] pb-1 poppins  dark:text-white">
           Sports
         </div>
         <ThemeToggler />
-      </motion.div>
+      </RevealAnimation>
       <div className="grid xl:grid-cols-5 lg:grid-cols-3 sm:grid-cols-2  grid-cols-1 gap-3">
         {playerList.map((player, i) => {
           return (
@@ -82,7 +54,7 @@ const SportSection = () => {
               sport={player.sport}
               title={player.title}
               event={player.event}
-              delay={i}
+              delay={i * 0.1}
             />
           );
         })}
@@ -90,18 +62,14 @@ const SportSection = () => {
           image={Ad}
           title="Advertisement title"
           content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          delay={0.4}
         />
       </div>
-      <motion.div
-        variants={animationVariant_2}
-        initial="initial"
-        animate="animate"
-        className="text-center pt-5"
-      >
+      <RevealAnimation delay={.7} classes="text-center">
         <button className="text-sm text-white font-semibold bg-[#2C9CF0] hover:bg-[#2c7dbc] py-[10px] px-[30px] rounded-sm animate">
           See More
         </button>
-      </motion.div>
+      </RevealAnimation>
     </div>
   );
 };
