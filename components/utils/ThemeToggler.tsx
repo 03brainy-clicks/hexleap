@@ -1,10 +1,10 @@
-'use client'
+"use client";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const ThemeToggler = () => {
-  const [theme, setTheme] = useState(true);
+  const [theme, setTheme] = useState(false);
   const [animateDiv, setAnimateDiv] = useState(false);
 
   const handleThemeToggle = () => {
@@ -12,15 +12,27 @@ const ThemeToggler = () => {
     const node = document.documentElement.classList;
     if (!node.contains("dark")) {
       node.add("dark");
+      localStorage.setItem("theme", "dark");
       setTheme(true);
     } else {
       node.remove("dark");
+      localStorage.setItem("theme", "light");
       setTheme(false);
     }
     setTimeout(() => {
       setAnimateDiv(false);
     }, 500); // Adjust the duration as needed
   };
+
+  useEffect(() => {
+    const theme = localStorage.getItem("theme");
+    if (theme !== null) {
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+        setTheme(true);
+      }
+    }
+  }, []);
 
   return (
     <div className="relative">
