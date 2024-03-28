@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import SportsCard from "../cards/SportsCard";
 import Player1 from "../../public/player-1.png";

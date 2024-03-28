@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import SideAnimation from "../animation/SideAnimation";
 

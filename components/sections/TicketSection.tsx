@@ -1,12 +1,5 @@
-"use client";
-import { motion } from "framer-motion";
 import Carousel from "../utils/Carousel";
 import RevealAnimation from "../animation/RevealAnimation";
-
-const animationVariant = {
-  initial: { y: 50, opacity: 0 },
-  animate: { y: 0, opacity: 1, transition: { duration: 1, delay: 0.8 } },
-};
 
 const TicketSection = () => {
   return (

@@ -1,8 +1,9 @@
+'use client'
+import Slider from "react-slick";
 import React from "react";
 import TicketCard from "../cards/TicketCard";
 import Ticket1 from "../../public/ticket-1.png";
 import Ticket2 from "../../public/ticket-2.png";
-import Slider from "react-slick";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import RevealAnimation from "../animation/RevealAnimation";
 
